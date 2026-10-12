@@ -1,0 +1,8 @@
+node_modules/
+src/renderer/renderer.bundle.js
+src/renderer/renderer.bundle.js.map
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+dist/
+.DS_Store

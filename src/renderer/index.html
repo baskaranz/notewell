@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: file:; script-src 'self';" />
+  <title>Notewell</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Pane 1: navigator -->
+    <nav id="nav">
+      <div id="nav-head">
+        <svg class="nav-logo" viewBox="0 0 1024 1024" width="20" height="20" aria-hidden="true">
+          <rect width="1024" height="1024" rx="232" fill="var(--accent)"/>
+          <path d="M352 700 L352 332 L672 700 L672 332" fill="none" stroke="#fff6ef"
+                stroke-width="132" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="726" cy="704" r="46" fill="#fff6ef"/>
+        </svg>
+      </div>
+      <div id="nav-list"></div>
+    </nav>
+
+    <!-- Pane 2: note list -->
+    <section id="list-pane">
+      <header id="list-head">
+        <span id="list-title">All Notes</span>
+        <div class="head-actions">
+          <button id="search-btn" class="icon-btn" title="Search (⌘F)"></button>
+          <button id="new-note" class="icon-btn" title="New note (⌘N)"></button>
+        </div>
+      </header>
+      <div class="search-wrap" id="search-wrap" hidden>
+        <input id="search" type="search" placeholder="Search notes…" spellcheck="false" />
+      </div>
+      <ul id="note-list"></ul>
+    </section>
+
+    <!-- Pane 3: editor -->
+    <main id="editor-pane">
+      <header id="toolbar">
+        <div id="title-crumb"></div>
+        <div class="tb-right">
+          <button id="lock-btn" class="icon-btn" title="Lock note (⌘L)"></button>
+          <button id="theme-btn" class="icon-btn" title="Appearance"></button>
+          <div id="mode-switch">
+            <button data-mode="live" class="active">Live</button>
+            <button data-mode="split">Markdown</button>
+          </div>
+        </div>
+      </header>
+      <div id="panes">
+        <div id="editor-host"></div>
+        <div id="preview" class="markdown-body" hidden></div>
+        <div id="empty-state" hidden>
+          <svg viewBox="0 0 1024 1024" width="72" height="72" aria-hidden="true">
+            <rect width="1024" height="1024" rx="232" fill="var(--accent)"/>
+            <path d="M352 700 L352 332 L672 700 L672 332" fill="none" stroke="#fff6ef"
+                  stroke-width="132" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="726" cy="704" r="46" fill="#fff6ef"/>
+          </svg>
+          <p class="empty-title">No note selected</p>
+          <p class="empty-sub">Pick a note, or press <kbd>⌘N</kbd> to start a new one.</p>
+        </div>
+      </div>
+      <footer id="meta-bar"></footer>
+    </main>
+
+    <div id="theme-popover" class="theme-popover" hidden></div>
+
+    <div id="modal" class="modal-overlay" hidden>
+      <div class="modal">
+        <div class="modal-title" id="modal-title">Lock note</div>
+        <p class="modal-msg" id="modal-msg"></p>
+        <input type="password" id="modal-pass" class="modal-input" placeholder="Passphrase" autocomplete="off" />
+        <input type="password" id="modal-pass2" class="modal-input" placeholder="Confirm passphrase" autocomplete="off" hidden />
+        <p class="modal-error" id="modal-error" hidden></p>
+        <div class="modal-actions">
+          <button id="modal-cancel" class="modal-btn">Cancel</button>
+          <button id="modal-ok" class="modal-btn primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.bundle.js"></script>
+</body>
+</html>

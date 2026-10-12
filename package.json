@@ -1,0 +1,59 @@
+{
+  "name": "notewell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first Markdown notes app. Original work; architecture informed by a clean-room study of established note apps.",
+  "author": "Notewell",
+  "main": "src/main/main.js",
+  "scripts": {
+    "bundle": "node build/esbuild.mjs",
+    "start": "npm run bundle && electron .",
+    "dev": "npm run bundle && electron . --dev",
+    "pack": "npm run bundle && electron-builder --dir",
+    "dist": "npm run bundle && electron-builder"
+  },
+  "dependencies": {
+    "marked": "^14.1.4",
+    "sql.js": "^1.12.0"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.7.1",
+    "@codemirror/lang-markdown": "^6.3.1",
+    "@codemirror/language": "^6.10.8",
+    "@codemirror/state": "^6.5.1",
+    "@codemirror/view": "^6.36.2",
+    "codemirror": "^6.0.1",
+    "electron": "^33.3.1",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.24.2"
+  },
+  "build": {
+    "appId": "com.notewell.app",
+    "productName": "Notewell",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "!src/**/*.map",
+      "build/icon.icns",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "**/node_modules/sql.js/**"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "identity": null
+    },
+    "dmg": {
+      "title": "Notewell ${version}"
+    }
+  }
+}

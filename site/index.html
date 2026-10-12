@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default-dark" data-theme-dark="true">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notewell — Local-First Markdown Notes for macOS</title>
+  <meta name="description" content="A sanctuary for your thoughts. Local-first, live Markdown notes with SQLite storage, bidirectional wikilinks, and zero cloud lock-in." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Notewell — Local-First Markdown Notes" />
+  <meta property="og:description" content="The speed of live Markdown, rock-solid SQLite local storage, bidirectional wikilinks, and per-note encryption." />
+  <meta property="og:image" content="icon-1024.png" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="apple-touch-icon" href="icon-1024.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <img src="icon.png" alt="Notewell Logo" class="brand-icon" />
+        <span class="brand-name">Notewell</span>
+        <span class="brand-tag">1.0</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#interactive-demo">Experience</a>
+        <a href="#themes">Themes</a>
+        <a href="#security">Security</a>
+        <a href="#shortcuts">Shortcuts</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-primary btn-sm">
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Version 1.0.0 Now Available for macOS</span>
+      </div>
+
+      <h1 class="hero-title">
+        A sanctuary for your thoughts.<br />
+        <span class="gradient-text">Local-first, purely Markdown.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Notewell marries the fluid speed of live Markdown editing with rock-solid SQLite local storage, bidirectional wikilinks, and per-note encryption. Zero cloud accounts. Zero surveillance.
+      </p>
+
+      <div class="hero-cta-group" id="download">
+        <a id="dmg-download-btn" href="#" class="btn btn-primary btn-lg">
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span class="btn-text-wrap">
+            <span class="btn-main-text">Download for macOS</span>
+            <span class="btn-sub-text">Apple Silicon (.dmg) · v1.0.0</span>
+          </span>
+        </a>
+
+        <a id="zip-download-btn" href="#" class="btn btn-secondary btn-lg">
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+          <span class="btn-text-wrap">
+            <span class="btn-main-text">Direct .zip Archive</span>
+            <span class="btn-sub-text">Portable standalone app</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="hero-specs">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> macOS 12+ Monterey or newer</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Apple Silicon (M1 / M2 / M3 / M4)</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 100% Offline & Private</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Free forever</span>
+      </div>
+
+      <!-- Interactive Mockup Showcase -->
+      <div class="hero-mockup-wrapper" id="interactive-demo">
+        <div class="mockup-glow"></div>
+        <div class="app-window">
+          <!-- macOS Window Titlebar -->
+          <div class="window-titlebar">
+            <div class="traffic-lights">
+              <span class="light close"></span>
+              <span class="light minimize"></span>
+              <span class="light zoom"></span>
+            </div>
+            <div class="window-title" id="mockup-title">Welcome to Notewell 👋</div>
+            <div class="window-actions">
+              <span class="mock-btn" title="Lock Note">🔒</span>
+              <button class="mock-mode-btn active" id="demo-mode-live">Live</button>
+              <button class="mock-mode-btn" id="demo-mode-split">Markdown</button>
+            </div>
+          </div>
+
+          <!-- App Body -->
+          <div class="app-body">
+            <!-- Sidebar: Navigation & Tags -->
+            <aside class="app-sidebar">
+              <div class="sidebar-section-title">NAVIGATE</div>
+              <ul class="sidebar-list">
+                <li class="sidebar-item active">
+                  <span class="icon">📝</span>
+                  <span class="label">All Notes</span>
+                  <span class="count">2</span>
+                </li>
+                <li class="sidebar-item">
+                  <span class="icon">🗑</span>
+                  <span class="label">Trash</span>
+                  <span class="count">0</span>
+                </li>
+              </ul>
+
+              <div class="sidebar-section-title">TAGS</div>
+              <ul class="sidebar-list">
+                <li class="sidebar-item tag-item">
+                  <span class="icon">🏷</span>
+                  <span class="label">#welcome</span>
+                  <span class="count">1</span>
+                </li>
+                <li class="sidebar-item tag-item">
+                  <span class="icon">🏷</span>
+                  <span class="label">#notewell</span>
+                  <span class="count">2</span>
+                </li>
+                <li class="sidebar-item tag-item">
+                  <span class="icon">🏷</span>
+                  <span class="label">#features</span>
+                  <span class="count">1</span>
+                </li>
+              </ul>
+
+              <div class="sidebar-footer">
+                <div class="status-indicator">
+                  <span class="dot online"></span>
+                  <span>SQLite Local Engine</span>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Note List Column -->
+            <div class="app-notelist">
+              <div class="notelist-header">
+                <div class="notelist-title">Notes</div>
+                <span class="new-icon">✏️</span>
+              </div>
+              <div class="notelist-items">
+                <div class="note-card active" data-note="welcome">
+                  <div class="note-card-title">Welcome to Notewell 👋</div>
+                  <div class="note-card-preview">Notewell is a local-first Markdown notes app. This note is a quick tour…</div>
+                  <div class="note-card-date">Just now</div>
+                </div>
+                <div class="note-card" data-note="another">
+                  <div class="note-card-title">Another note 📝</div>
+                  <div class="note-card-preview">This note is linked from [[Welcome to Notewell 👋]]. Notice how backlinks work…</div>
+                  <div class="note-card-date">Today</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Editor / Preview Area -->
+            <main class="app-editor-area">
+              <!-- Live Mode View -->
+              <div class="editor-pane active" id="pane-live">
+                <div class="editor-content-scroll">
+                  <h1 class="demo-h1">Welcome to Notewell 👋</h1>
+                  <p class="demo-lead">Notewell is a local-first Markdown notes app. This note is a quick tour — edit it however you like, or press <kbd>⌘N</kbd> to start your own.</p>
+                  
+                  <h2 class="demo-h2">Formatting</h2>
+                  <p class="demo-p">Write <strong>bold</strong>, <em>italic</em>, <del>strikethrough</del>, and <code>inline code</code>. You can even mix them for <strong><em>bold italic</em></strong>.</p>
+                  
+                  <blockquote class="demo-quote">
+                    Blockquotes are handy for a highlighted thought.<br />
+                    <span class="quote-author">— someone wise</span>
+                  </blockquote>
+
+                  <h2 class="demo-h2">Tasks</h2>
+                  <ul class="demo-tasks">
+                    <li class="task-item"><label><input type="checkbox" checked /> An open task</label></li>
+                    <li class="task-item"><label><input type="checkbox" checked /> A finished task</label></li>
+                    <li class="task-item"><label><input type="checkbox" /> Toggle me by clicking the checkbox</label></li>
+                  </ul>
+
+                  <h2 class="demo-h2">Links, tags &amp; backlinks</h2>
+                  <ul class="demo-list">
+                    <li>A web link: <a href="https://example.com" class="demo-link">Notewell on the web</a></li>
+                    <li>A tag: <span class="tag-pill">#welcome</span> — click it in the sidebar to filter</li>
+                    <li>A note link: <span class="wikilink-pill" data-target="another">[[Another note]]</span> — wiki-style backlinks</li>
+                  </ul>
+
+                  <h2 class="demo-h2">Tables</h2>
+                  <div class="demo-table-wrap">
+                    <table class="demo-table">
+                      <thead>
+                        <tr>
+                          <th>Action</th>
+                          <th>Shortcut</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>New note</td><td><kbd>⌘N</kbd></td></tr>
+                        <tr><td>Search</td><td><kbd>⌘F</kbd></td></tr>
+                        <tr><td>Lock / Unlock</td><td><kbd>⌘L</kbd></td></tr>
+                        <tr><td>Live / Markdown</td><td><kbd>⌘\</kbd></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <hr class="demo-hr" />
+
+                  <h2 class="demo-h2">A few tips</h2>
+                  <ul class="demo-list">
+                    <li>Switch between <strong>Live</strong> and <strong>Markdown</strong> modes from the top-right.</li>
+                    <li>Change the look with the <strong>appearance</strong> button — there are nine themes.</li>
+                    <li><strong>Lock</strong> a note with <kbd>⌘L</kbd> to encrypt it behind a passphrase.</li>
+                  </ul>
+                  <p class="demo-p">Happy writing! <span class="tag-pill">#notewell</span></p>
+                </div>
+              </div>
+
+              <!-- Split Mode View (Hidden by default, shown when Split is toggled) -->
+              <div class="editor-pane-split" id="pane-split">
+                <div class="split-col split-raw">
+                  <div class="split-header">RAW MARKDOWN (CODE)</div>
+                  <pre class="split-code"><code># Welcome to Notewell 👋
+
+Notewell is a local-first Markdown notes app.
+This note is a quick tour — edit it however
+you like, or press **⌘N** to start your own.
+
+## Formatting
+
+Write **bold**, *italic*, ~~strikethrough~~,
+and `inline code`. You can even mix them for
+***bold italic***.
+
+> Blockquotes are handy for a highlighted
+> thought.
+
+## Tasks
+
+- [x] An open task
+- [x] A finished task
+- [ ] Toggle me by editing brackets
+
+## Tables
+
+| Action | Shortcut |
+| --- | --- |
+| New note | ⌘N |
+| Search | ⌘F |
+| Lock / Unlock | ⌘L |
+| Live / Markdown | ⌘\ |</code></pre>
+                </div>
+                <div class="split-col split-preview">
+                  <div class="split-header">RENDERED HTML</div>
+                  <div class="split-rendered-body">
+                    <h2>Welcome to Notewell 👋</h2>
+                    <p>Notewell is a local-first Markdown notes app. This note is a quick tour…</p>
+                    <table class="demo-table">
+                      <thead><tr><th>Action</th><th>Shortcut</th></tr></thead>
+                      <tbody>
+                        <tr><td>New note</td><td><kbd>⌘N</kbd></td></tr>
+                        <tr><td>Search</td><td><kbd>⌘F</kbd></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Meta Footer -->
+              <footer class="app-meta-footer">
+                <span class="meta-words">260 words · edited 12 Oct · SQLite local</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-backlinks">
+                  Backlinks: <button class="meta-bl-pill" data-target="another">Another note 📝</button>
+                </span>
+              </footer>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 9 Themes Showcase -->
+  <section class="section themes-section" id="themes">
+    <div class="container">
+      <div class="section-badge">PERSONALIZATION</div>
+      <h2 class="section-title">Nine hand-crafted themes.<br />Tailored for every hour of the day.</h2>
+      <p class="section-subtitle">Click any swatch below to switch the interactive app mockup theme instantly.</p>
+
+      <div class="theme-picker-bar">
+        <button class="theme-chip active" data-theme="default-dark">
+          <span class="chip-dot" style="background: #d1483a;"></span>
+          <span class="chip-name">Default Dark</span>
+        </button>
+        <button class="theme-chip" data-theme="default-light">
+          <span class="chip-dot" style="background: #ffffff; border: 1px solid #ccc;"></span>
+          <span class="chip-name">Default Light</span>
+        </button>
+        <button class="theme-chip" data-theme="solarized-light">
+          <span class="chip-dot" style="background: #fdf6e3;"></span>
+          <span class="chip-name">Solarized Light</span>
+        </button>
+        <button class="theme-chip" data-theme="solarized-dark">
+          <span class="chip-dot" style="background: #002b36;"></span>
+          <span class="chip-name">Solarized Dark</span>
+        </button>
+        <button class="theme-chip" data-theme="dracula">
+          <span class="chip-dot" style="background: #bd93f9;"></span>
+          <span class="chip-name">Dracula</span>
+        </button>
+        <button class="theme-chip" data-theme="nord">
+          <span class="chip-dot" style="background: #88c0d0;"></span>
+          <span class="chip-name">Nord</span>
+        </button>
+        <button class="theme-chip" data-theme="gotham">
+          <span class="chip-dot" style="background: #2aa889;"></span>
+          <span class="chip-name">Gotham</span>
+        </button>
+        <button class="theme-chip" data-theme="charcoal">
+          <span class="chip-dot" style="background: #8a97a6;"></span>
+          <span class="chip-name">Charcoal</span>
+        </button>
+        <button class="theme-chip" data-theme="sepia">
+          <span class="chip-dot" style="background: #b5651d;"></span>
+          <span class="chip-name">Sepia</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-badge">WHY NOTEWELL</div>
+      <h2 class="section-title">Designed for focus. Engineered for speed.</h2>
+      <p class="section-subtitle">Everything you need to write and connect ideas, without the bloat of web-wrapped cloud suites.</p>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">⚡️</div>
+          <h3 class="feature-title">Local-First SQLite Engine</h3>
+          <p class="feature-desc">Your notes are stored in a dedicated local SQLite database on your Mac. Instant search across thousands of notes, instantaneous launches, and zero sync spin-wheels.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3 class="feature-title">Live Markdown Conceal</h3>
+          <p class="feature-desc">Raw Markdown syntax markers fade away while you read, giving you the clarity of a book. The exact moment your cursor lands on a line, markers seamlessly reappear for precision editing.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <h3 class="feature-title">Bidirectional [[Wikilinks]]</h3>
+          <p class="feature-desc">Connect thoughts intuitively using <code>[[Note Title]]</code>. Notewell tracks all incoming references and displays interactive backlink pills at the footer of each note.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">🏷️</div>
+          <h3 class="feature-title">Organize with #Tags</h3>
+          <p class="feature-desc">Tag thoughts on the fly with <code>#work</code>, <code>#ideas</code>, or <code>#project/alpha</code>. Click any tag in the sidebar to filter your note collection instantly.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">Per-Note AES-256 Encryption</h3>
+          <p class="feature-desc">Press <kbd>⌘L</kbd> on any note to seal it behind military-grade AES-GCM 256-bit encryption with PBKDF2 key derivation. Your secret thoughts stay private even if your laptop is borrowed.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">📂</div>
+          <h3 class="feature-title">Zero Lock-In Markdown Export</h3>
+          <p class="feature-desc">Export any note anytime as clean, standard Markdown with <kbd>⌘⇧E</kbd>. Your writing remains your property forever, readable in any text editor on any device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Architecture Section -->
+  <section class="section security-section" id="security">
+    <div class="container">
+      <div class="security-card">
+        <div class="security-left">
+          <div class="section-badge badge-invert">PRIVACY PROMISE</div>
+          <h2 class="security-title">No account. No telemetry. No servers between you and your thoughts.</h2>
+          <p class="security-text">
+            Most modern note applications want your email address, your phone number, a monthly subscription, and access to all your thoughts on their cloud servers.
+          </p>
+          <p class="security-text">
+            Notewell takes the opposite path: an offline-first desktop tool written to respect your privacy. Everything stays on your disk inside <code>~/Library/Application Support/notewell/</code>.
+          </p>
+          <div class="security-pills">
+            <span class="sec-pill">🔒 AES-256-GCM Vault</span>
+            <span class="sec-pill">💾 SQLite WASM Core</span>
+            <span class="sec-pill">🛡️ Zero Telemetry</span>
+            <span class="sec-pill">🌐 100% Offline Capable</span>
+          </div>
+        </div>
+        <div class="security-right">
+          <div class="code-box">
+            <div class="code-title">Encrypted Note Structure</div>
+            <pre><code>{
+  "id": "7f8b9e01-...",
+  "title": "Private Journal",
+  "encrypted": 1,
+  "blob": {
+    "salt": "base64(16 bytes)",
+    "iv": "base64(12 bytes)",
+    "ciphertext": "base64(...)"
+  },
+  "keyDerivation": "PBKDF2-HMAC-SHA256",
+  "iterations": 100000
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keyboard Shortcuts Cheat-sheet -->
+  <section class="section shortcuts-section" id="shortcuts">
+    <div class="container">
+      <div class="section-badge">SPEED RUN</div>
+      <h2 class="section-title">Keep your fingers on the keyboard.</h2>
+      <p class="section-subtitle">Every essential note-taking action has a native macOS shortcut.</p>
+
+      <div class="shortcuts-grid">
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>N</kbd></div>
+          <div class="shortcut-label">New Note</div>
+          <div class="shortcut-sub">Instant scratchpad</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>F</kbd></div>
+          <div class="shortcut-label">Find in Notes</div>
+          <div class="shortcut-sub">Real-time full-text search</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>1</kbd></div>
+          <div class="shortcut-label">Live Mode</div>
+          <div class="shortcut-sub">Concealed formatting preview</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>2</kbd></div>
+          <div class="shortcut-label">Markdown Mode</div>
+          <div class="shortcut-sub">Side-by-side split view</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>\</kbd></div>
+          <div class="shortcut-label">Toggle View</div>
+          <div class="shortcut-sub">Switch between views</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>L</kbd></div>
+          <div class="shortcut-label">Lock / Unlock</div>
+          <div class="shortcut-sub">Toggle note encryption</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>⇧</kbd><kbd>E</kbd></div>
+          <div class="shortcut-label">Export Markdown</div>
+          <div class="shortcut-sub">Save clean .md file to disk</div>
+        </div>
+        <div class="shortcut-item">
+          <div class="shortcut-keys"><kbd>⌘</kbd><kbd>⌫</kbd></div>
+          <div class="shortcut-label">Move to Trash</div>
+          <div class="shortcut-sub">Safely archive or delete</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Bottom CTA Banner -->
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner-content">
+          <img src="icon.png" alt="Notewell Icon" class="cta-icon" />
+          <h2 class="cta-title">Start writing with clarity today.</h2>
+          <p class="cta-desc">Download Notewell 1.0.0 for macOS. No account setup required — unpack and start writing in seconds.</p>
+          <div class="cta-btn-group">
+            <a href="#download" class="btn btn-primary btn-lg">
+              <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download for macOS (.dmg)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="icon.png" alt="Notewell" class="footer-icon" />
+          <span>Notewell</span>
+        </div>
+        <p class="footer-tagline">A local-first Markdown notes app crafted for macOS.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-col">
+          <div class="footer-heading">Product</div>
+          <a href="#features">Features</a>
+          <a href="#themes">Themes</a>
+          <a href="#security">Security</a>
+          <a href="#download">Download</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Architecture</div>
+          <span>SQLite WASM</span>
+          <span>CodeMirror 6</span>
+          <span>Electron 33</span>
+          <span>AES-GCM 256</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Notewell. An original clean-room creation. Built for thinkers and writers.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

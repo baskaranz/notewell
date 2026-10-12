@@ -1,11 +1,26 @@
 # Notewell
 
-A local-first Markdown notes app for the desktop (Electron). Original work; the
-architecture is informed by a clean-room study of how mature note apps are
-structured — a single Markdown source of truth, with tags, todos, and backlinks
-*derived* from the text. Not a clone of any product; contains no third-party app code.
+<p align="center">
+  <img src="build/icon.png" width="96" height="96" alt="Notewell Logo" />
+  <br />
+  <strong>A local-first Markdown notes app crafted for macOS.</strong>
+  <br />
+  <a href="https://notewell-1mi.pages.dev">🌐 <strong>Website & Live Demo</strong></a> ·
+  <a href="https://github.com/baskaranz/notewell/releases/tag/v1.0.0">⬇️ <strong>Download v1.0.0 (macOS)</strong></a>
+</p>
 
-![Notewell icon](build/icon.png)
+<p align="center">
+  <a href="https://notewell-1mi.pages.dev"><img src="https://img.shields.io/badge/Website-notewell--1mi.pages.dev-e04e3e?style=flat-square" alt="Website" /></a>
+  <a href="https://github.com/baskaranz/notewell/releases/tag/v1.0.0"><img src="https://img.shields.io/badge/Download-v1.0.0%20(macOS)-1f242c?style=flat-square&logo=apple" alt="Download" /></a>
+  <img src="https://img.shields.io/badge/Storage-SQLite%20Local-blue?style=flat-square" alt="SQLite" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
+</p>
+
+---
+
+> Visit the official product site at **[https://notewell-1mi.pages.dev](https://notewell-1mi.pages.dev)** to try the interactive live editor and theme preview.
+
+Notewell is an original, local-first Markdown notes app for the desktop (Electron). The architecture is informed by a clean-room study of mature note apps — a single Markdown source of truth, with tags, todos, and backlinks *derived* directly from your text. Zero cloud accounts. Zero surveillance.
 
 ## Features
 

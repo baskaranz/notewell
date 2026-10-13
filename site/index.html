@@ -98,6 +98,21 @@
         <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Free forever</span>
       </div>
 
+      <!-- First-launch install note (unsigned build) -->
+      <div class="install-note">
+        <div class="install-note-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <span>Opening Notewell the first time</span>
+        </div>
+        <p>Notewell is open-source and isn’t notarized by Apple, so macOS adds one safety step on first launch. After dragging Notewell into <strong>Applications</strong>:</p>
+        <ol>
+          <li><strong>Right-click</strong> (or Control-click) Notewell → <strong>Open</strong>, then <strong>Open</strong> again in the dialog.</li>
+          <li>If macOS says the app is <em>“damaged” or can’t be opened</em>, open <strong>Terminal</strong> and run this once:</li>
+        </ol>
+        <pre class="install-cmd"><code>xattr -dr com.apple.quarantine /Applications/Notewell.app</code></pre>
+        <p class="install-note-foot">This just clears the download quarantine flag — you only do it once. Prefer a signed build? Grab the source and run <code>npm run dist</code>.</p>
+      </div>
+
       <!-- Interactive Mockup Showcase -->
       <div class="hero-mockup-wrapper" id="interactive-demo">
         <div class="mockup-glow"></div>
@@ -441,7 +456,7 @@ and `inline code`. You can even mix them for
     "ciphertext": "base64(...)"
   },
   "keyDerivation": "PBKDF2-HMAC-SHA256",
-  "iterations": 100000
+  "iterations": 250000
 }</code></pre>
           </div>
         </div>

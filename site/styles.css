@@ -1158,3 +1158,33 @@ code {
   .cta-banner { padding: 40px 20px; }
   .footer-content { flex-direction: column; }
 }
+
+/* First-launch install note (unsigned build) */
+.install-note {
+  max-width: 560px;
+  margin: 28px auto 0;
+  text-align: left;
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  font-size: 14px;
+  color: var(--site-text-dim);
+  line-height: 1.6;
+}
+.install-note-head {
+  display: flex; align-items: center; gap: 8px;
+  color: var(--site-text); font-weight: 600; font-size: 15px; margin-bottom: 6px;
+}
+.install-note-head svg { color: var(--site-accent); flex: 0 0 auto; }
+.install-note p { margin: 8px 0; }
+.install-note strong { color: var(--site-text); font-weight: 600; }
+.install-note ol { margin: 8px 0; padding-left: 20px; }
+.install-note li { margin: 5px 0; }
+.install-cmd {
+  background: #0b0d10; border: 1px solid var(--site-border);
+  border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 8px 0;
+}
+.install-cmd code { font-family: var(--font-mono); font-size: 12.5px; color: var(--site-text); white-space: nowrap; }
+.install-note-foot { font-size: 13px; margin-top: 10px; }
+.install-note code { font-family: var(--font-mono); font-size: 0.9em; background: var(--mock-code-bg); padding: 1px 5px; border-radius: 4px; color: var(--site-text); }

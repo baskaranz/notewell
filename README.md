@@ -53,8 +53,23 @@ npm run pack    # unpacked dist/mac-arm64/Notewell.app
 npm run dist    # dist/Notewell-<version>-arm64.dmg  (+ .zip)
 ```
 
-The build is **unsigned** (`mac.identity: null`). To ship it, set up an Apple Developer
-ID and notarization in the `build` block of `package.json`.
+The published downloads are **not signed with an Apple Developer ID or notarized**, so
+macOS adds a one-time safety step on first launch.
+
+## Installing a downloaded build (macOS)
+
+After dragging **Notewell** into **Applications**:
+
+1. **Right-click** (or Control-click) Notewell → **Open**, then **Open** again in the dialog.
+2. If macOS reports the app is *"damaged" or can't be opened*, clear the download
+   quarantine flag once from Terminal:
+
+   ```bash
+   xattr -dr com.apple.quarantine /Applications/Notewell.app
+   ```
+
+You only need to do this once. To produce a signed/notarized build, clone the repo and run
+`npm run dist` with your own Apple Developer ID configured in the `mac` block of `package.json`.
 
 ## Shortcuts
 
